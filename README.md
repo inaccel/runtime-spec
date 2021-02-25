@@ -3,6 +3,8 @@
 InAccel provides a runtime specification that you can use to advertise system
 hardware resources to Coral.
 
+The specification can be found [here](inaccel/runtime.h).
+
 ### Abstract
 
 The InAccel Coral runtime specification aims to specify the configuration, and
