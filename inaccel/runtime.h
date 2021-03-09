@@ -1,6 +1,9 @@
 #ifndef INACCEL_RUNTIME_H
 #define INACCEL_RUNTIME_H
 
+/* Return value of object constructors in case of an internal error. */
+#define INACCEL_FAILED ((void *) -1)
+
 /* CL resource struct (API Type). */
 typedef struct _cl_resource *cl_resource;
 
@@ -8,7 +11,9 @@ typedef struct _cl_resource *cl_resource;
  * @details Creates a resource object.
  *
  * @param index The index associated with this resource.
- * @returns The resource.
+ * @returns A valid non-zero object if the resource is created successfuly. The
+ *          value INACCEL_FAILED (that is, (void *) -1) is returned to indicate
+ *          a failure to allocate resources required by the implementation.
  */
 cl_resource create_resource(unsigned int index);
 
@@ -87,7 +92,9 @@ typedef struct _cl_memory *cl_memory;
  *
  * @param resource A valid resource used to create the memory object.
  * @param index The index associated with this memory.
- * @returns The memory.
+ * @returns A valid non-zero object if the memory is created successfuly. The
+ *          value INACCEL_FAILED (that is, (void *) -1) is returned to indicate
+ *          a failure to allocate resources required by the implementation.
  */
 cl_memory create_memory(cl_resource resource, unsigned int index);
 
@@ -125,7 +132,9 @@ typedef struct _cl_buffer *cl_buffer;
  * @param host A pointer to the buffer data that should already be allocated by
  *             the application. The size of the buffer that address points to
  *             must be greater than or equal to the size bytes.
- * @returns The buffer.
+ * @returns A valid non-zero object if the buffer is created successfuly. The
+ *          value INACCEL_FAILED (that is, (void *) -1) is returned to indicate
+ *          a failure to allocate resources required by the implementation.
  */
 cl_buffer create_buffer(cl_memory memory, size_t size, void *host);
 
@@ -169,7 +178,10 @@ typedef struct _cl_compute_unit *cl_compute_unit;
  *
  * @param resource A valid resource used to create the compute unit object.
  * @param name A function name in the binary executable.
- * @returns The compute unit.
+ * @returns A valid non-zero object if the compute unit is created successfuly.
+ *          The value INACCEL_FAILED (that is, (void *) -1) is returned to
+ *          indicate a failure to allocate resources required by the
+ *          implementation.
  */
 cl_compute_unit create_compute_unit(cl_resource resource, const char *name);
 
