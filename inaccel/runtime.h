@@ -1,6 +1,10 @@
 #ifndef INACCEL_RUNTIME_H
 #define INACCEL_RUNTIME_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Return value of object constructors in case of an internal error. */
 #define INACCEL_FAILED ((void *) -1)
 
@@ -225,4 +229,8 @@ int await_compute_unit_run(cl_compute_unit compute_unit);
  */
 void release_compute_unit(cl_compute_unit compute_unit);
 
+#ifdef __cplusplus
+}
 #endif
+
+#endif // INACCEL_RUNTIME_H
