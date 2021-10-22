@@ -1,6 +1,8 @@
 #ifndef INACCEL_RUNTIME_H
 #define INACCEL_RUNTIME_H
 
+#include <stddef.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
