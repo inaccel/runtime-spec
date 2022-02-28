@@ -48,6 +48,14 @@ char *get_resource_name(cl_resource resource);
 char *get_resource_version(cl_resource resource);
 
 /**
+ * @details Get the pci identifier of a resource.
+ *
+ * @param resource Refers to a valid resource object.
+ * @returns The resource pci identifier.
+ */
+char *get_resource_pci_id(cl_resource resource);
+
+/**
  * @details Get the serial number of a resource.
  *
  * @param resource Refers to a valid resource object.
