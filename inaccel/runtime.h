@@ -29,7 +29,7 @@ cl_resource create_resource(unsigned int index);
  * @param resource Refers to a valid resource object.
  * @returns The resource vendor.
  */
-char *get_resource_vendor(cl_resource resource);
+const char *get_resource_vendor(cl_resource resource);
 
 /**
  * @details Get the name of a resource.
@@ -37,7 +37,7 @@ char *get_resource_vendor(cl_resource resource);
  * @param resource Refers to a valid resource object.
  * @returns The resource name.
  */
-char *get_resource_name(cl_resource resource);
+const char *get_resource_name(cl_resource resource);
 
 /**
  * @details Get the version of a resource.
@@ -45,7 +45,7 @@ char *get_resource_name(cl_resource resource);
  * @param resource Refers to a valid resource object.
  * @returns The resource version.
  */
-char *get_resource_version(cl_resource resource);
+const char *get_resource_version(cl_resource resource);
 
 /**
  * @details Get the pci identifier of a resource.
@@ -53,7 +53,7 @@ char *get_resource_version(cl_resource resource);
  * @param resource Refers to a valid resource object.
  * @returns The resource pci identifier.
  */
-char *get_resource_pci_id(cl_resource resource);
+const char *get_resource_pci_id(cl_resource resource);
 
 /**
  * @details Get the serial number of a resource.
@@ -61,7 +61,7 @@ char *get_resource_pci_id(cl_resource resource);
  * @param resource Refers to a valid resource object.
  * @returns The resource serial number.
  */
-char *get_resource_serial_no(cl_resource resource);
+const char *get_resource_serial_no(cl_resource resource);
 
 /**
  * @details Get the current power of a resource.
@@ -118,7 +118,7 @@ cl_memory create_memory(cl_resource resource, unsigned int index);
  * @param memory Refers to a valid memory object.
  * @returns The memory type.
  */
-char *get_memory_type(cl_memory memory);
+const char *get_memory_type(cl_memory memory);
 
 /**
  * @details Get the size of a memory.
